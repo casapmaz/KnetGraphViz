@@ -9,8 +9,14 @@ a= crssn(1, "input", "x", [0])
 b=crssn(2, "input2", "y", [0])
 d=crssn(7, "add", "add???", [1,2])
 L= [a, b, d]
+
+import Base.print
+function print(p::crssn)
+  println("{\nid: ", p.id, "\nop: ", p.op, "\nname: ", p.name, "\nargv: ", p.argv, "\n}")
+end
+
 for i in 1:length(L)
-  println("{\nid: ", L[i].id, "\nop: ", L[i].op, "\nname: ", L[i].name, "\nargv: ", L[i].argv, "\n}")
+  print(L[i])
 end
 
 #this is an experiment
